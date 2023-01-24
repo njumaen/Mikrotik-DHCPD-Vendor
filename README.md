@@ -4,7 +4,7 @@
 This script for your Mikrotik DHCP Server sets the vendor as comment for a new DHCP lease.
 It then optionally sends information about the lease by telegram.
 
-``
+```
 :local mac [:pick $leaseActMAC 0 8];
 :foreach i in=[/ip dhcp-server lease find mac-address=$leaseActMAC] do={
    :if ( ([:len [/ip dhcp-server lease get $i comment]] = 0) and ( [/ip dhcp-server lease get $i dynamic] )  ) do={
@@ -28,4 +28,4 @@ It then optionally sends information about the lease by telegram.
 
    }
 }
-``
+```
